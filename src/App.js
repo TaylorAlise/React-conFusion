@@ -4,6 +4,7 @@ import Menu from './components/MenuComponent';
 import { DISHES } from './shared/dishes';
 import { Component } from 'react';
 import Navigation from './Navbar';
+import DishDetail from './components/DishdetailComponent';
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends Component {
       <div className="App">
         <Navigation/>
         <Menu dishes={this.state.dishes}/>
+        <DishDetail/>
       </div>
     );
   }
