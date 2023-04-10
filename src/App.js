@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dishes: DISHES
+      dishes: DISHES,
+      selectedDish: 0
     };
   }
 
@@ -19,7 +20,7 @@ class App extends Component {
       <div className="App">
         <Navigation/>
         <Menu dishes={this.state.dishes}/>
-        <DishDetail/>
+        <DishDetail dishes={this.state.dishes[0]} />
       </div>
     );
   }
