@@ -4,24 +4,19 @@ import Menu from './components/MenuComponent';
 import { DISHES } from './shared/dishes';
 import { Component } from 'react';
 import Navigation from './Navbar';
-import DishDetail from './components/DishdetailComponent';
+import Main from './components/MainComponent';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dishes: DISHES,
-      selectedDish: 0
-    };
-  }
+  
 
   render() {
     return (
-      <div className="App">
-        <Navigation/>
-        <Menu dishes={this.state.dishes}/>
-        <DishDetail dishes={this.state.dishes[0]} />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Main/>
+        </div>
+      </BrowserRouter>
     );
   }
  
