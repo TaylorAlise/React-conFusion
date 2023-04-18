@@ -29,12 +29,7 @@ class Main extends Component {
             );
         }
 
-        <Switch>
-            <Route path='/home' component={HomePage} />
-            <Route exact path='/menu' component={() => <Menu
-            dishes={this.state.dishes} />} />
-            <Redirect to="/home" />
-        </Switch>
+        
 
         return (
 
@@ -46,9 +41,13 @@ class Main extends Component {
                 </Navbar>
 
                 <Header />
-                <Menu dishes={this.state.dishes} onClick={(dishId) =>
-                    this.onDishSelect(dishId)}
-                />
+                <Switch>
+                    <Route path='/home' component={HomePage} />
+                    <Route exact path='/menu' component={() => <Menu
+                    dishes={this.state.dishes} />} />
+                    <Redirect to="/home" />
+                </Switch>
+
                 <DishDetail dish={this.state.dishes.filter((dish) => dish.id ===
                     this.state.selectedDish)[0]} 
                 />

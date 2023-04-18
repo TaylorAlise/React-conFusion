@@ -50,7 +50,7 @@ class Header extends Component {
                     </div>
                 </Navbar>
 
-                <Jumbotron>
+                <Jumbotron className="jumbotron">
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
