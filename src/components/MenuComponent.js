@@ -6,8 +6,8 @@ import { Card,
         CardBody, 
         CardTitle
     } from 'reactstrap';
-import DishDetail from './DishdetailComponent';
-import { Navbar, NavbarBrand } from 'reactstrap';
+//import DishDetail from './DishdetailComponent';
+//import { Navbar, NavbarBrand } from 'reactstrap';
 
 
 function RenderMenuItem ({dish, onClick}) {

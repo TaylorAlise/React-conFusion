@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import Menu from './components/MenuComponent';
+//import Menu from './components/MenuComponent';
 import { DISHES } from './shared/dishes';
 import { Component } from 'react';
 import { BrowserRouter as Router} from 'react-router-dom';
@@ -9,7 +9,6 @@ import { BrowserRouter as Router} from 'react-router-dom';
 
 //pages as components
 import Main from './components/MainComponent';
-import About from './components/AboutComponent';
 
 
 class App extends Component {
