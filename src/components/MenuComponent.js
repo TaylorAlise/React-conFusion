@@ -7,6 +7,8 @@ import { Card,
         CardTitle
     } from 'reactstrap';
 import DishDetail from './DishdetailComponent';
+import { Navbar, NavbarBrand } from 'reactstrap';
+
 
 function RenderMenuItem ({dish, onClick}) {
     return (
@@ -28,7 +30,9 @@ const Menu = (props) => {
         );
     });
 
-    return (
+
+    return (    
+
         <div className="container">
             <div className="row">
                 {menu}

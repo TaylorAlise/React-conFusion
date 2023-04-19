@@ -3,20 +3,23 @@ import './App.css';
 import Menu from './components/MenuComponent';
 import { DISHES } from './shared/dishes';
 import { Component } from 'react';
-import Navigation from './Navbar';
+import { BrowserRouter as Router} from 'react-router-dom';
+
+
+
+//pages as components
 import Main from './components/MainComponent';
-import { BrowserRouter } from 'react-router-dom';
+import About from './components/AboutComponent';
+
 
 class App extends Component {
-  
-
   render() {
     return (
-      <BrowserRouter>
+      <Router>
         <div className="App">
-          <Main/>
+          <Main />
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
  
