@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
-import Header from "./HeaderComponent";
+import { addLeader } from "../redux/ActionCreators";
+import { Leaders } from "../redux/leaders";
 
 function RenderCard({item}) {
     return(
@@ -15,6 +16,26 @@ function RenderCard({item}) {
         </Card>
     );
 }
+
+function RenderLeader({addLeader, name}) {
+    return(
+        <Card>
+            <CardImg src={addLeader.image} alt={addLeader.name} />
+            <CardBody>
+            <CardTitle>{addLeader.name}</CardTitle>
+            {addLeader.designation ?
+            <CardSubtitle>{addLeader.designation}</CardSubtitle> : null }
+            <CardText>{addLeader.description}</CardText>
+            </CardBody>
+        </Card>
+
+    );
+
+
+}
+
+
+
 
 function Home(props) {
     return (

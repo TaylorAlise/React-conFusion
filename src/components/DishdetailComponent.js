@@ -1,6 +1,7 @@
-import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import React from "react";
 import { Link } from 'react-router-dom';
+import { Component } from 'react';
 
 //add DishDetail component
 const DishDetail = (props) => 
@@ -14,7 +15,7 @@ const DishDetail = (props) =>
                         <BreadcrumbItem><Link
                         to="/menu">Menu</Link></BreadcrumbItem>
                         <BreadcrumbItem
-                        active>{props.dish.name}</BreadcrumbItem>
+                        active>{props.dyish.name}</BreadcrumbItem>
                     </Breadcrumb>
                     <div className="col-12">
                         <h3>{props.dish.name}</h3>
@@ -57,7 +58,17 @@ function RenderDish(dish) {
     }
 }
 
-function RenderComments(comments) {
+class CommentForm extends Component {
+    render() {
+      return (
+        <div className="container"> 
+            <Button outline><span className="fas fa-pencil-alt"></span>Submit Comment</Button>
+        </div>
+      )
+    }
+  }
+
+function RenderComments({comments, addComment, dishId}) {
     if (comments != null) {
         const commentList = comments.map((comment) => {
             return (
@@ -75,12 +86,24 @@ function RenderComments(comments) {
             );
         });
         return <div>{commentList}</div>;
+    
     }
     else {
         return (
             <div></div>
         )
     }
+
+    <CommentForm dishId={dishId} addComment={addComment} />
+    this.props.addComment(this.props.dishId, values.rating,
+        values.author, values.comment);
+    <RenderComments comments={props.comments}
+        addComment={props.addComment}
+        dishId={props.dish.id}
+    />       
+    
+
+
 }
 export default DishDetail;
 
