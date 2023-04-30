@@ -1,9 +1,9 @@
 import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
-import React, {userState} from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
+import CommentForm from './CommentFormComponent';
 import { Component } from 'react';
 import { Modal } from 'reactstrap';
-import { Form, Input } from 'reactstrap';
 
 //add DishDetail component
 const DishDetail = (props) => 
@@ -94,47 +94,15 @@ const DishDetail = (props) =>
 
 
 
-class CommentForm extends Component {    
-    state = {
-        isOpen: false
-    };
+    
 
-    openModal = () => this.setState({ isOpen: true });
-    closeModal = () => this.setState({ isOpen: false });
-
-    render() {
-       
-      return (
-        <div className="container"> 
-            <Modal show={this.state.isOpen} onHide={this.closeModal}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Submit Comment</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Form>
-                        ..
-                    </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Input type="submit" value="Submit" />
-                    <Button className="btn-secondary" onClick={this.closeModal}>Close</Button>
-                </Modal.Footer>
-            </Modal>
-            <Button outline onClick={this.openModal}><span className="fa fa-pencil"></span> Submit Comment</Button>
-            
-        </div>
-
-      )
-    }
-}
-
-   /* <CommentForm dishId={dishId} addComment={addComment} />
-    this.props.addComment(this.props.dishId, values.rating,
-        values.author, values.comment);
-    <RenderComments comments={props.comments}
-        addComment={props.addComment}
-        dishId={props.dish.id}
-    /> */      
+/* <CommentForm dishId={dishId} addComment={addComment} />
+this.props.addComment(this.props.dishId, values.rating,
+values.author, values.comment);
+<RenderComments comments={props.comments}
+ addComment={props.addComment}
+dishId={props.dish.id}
+/> */      
     
 export default DishDetail;
 
