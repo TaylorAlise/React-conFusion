@@ -23,13 +23,6 @@
     color:floralwhite;
 }
 
-#myModal form {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 500px;
-}
    
 address {
     font-size:80%;
@@ -39,4 +32,15 @@ address {
    
 .navbar-dark {
     background-color: #512DA8;
+}
+
+.modal-backdrop {
+    opacity: 0.5;
+}
+.modal.fade.in {
+    opacity: 1;
+}
+
+.modal.fade.in .modal-dialog {
+    transform: translate(0,0);
 }
