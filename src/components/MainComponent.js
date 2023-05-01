@@ -84,12 +84,10 @@ class Main extends Component {
         return (
 
             <div>
-                
                 <Header />
-                
                 <div>
                 <Switch>
-                <Route path='/home' component={HomePage} />
+                    <Route path='/home' component={HomePage} />
                     <Route exact path='/aboutus' component={() => <About
                     leaders={this.props.leaders} />} />
                     <Route exact path='/menu' component={() => <Menu
@@ -99,7 +97,6 @@ class Main extends Component {
                     <Redirect to="/home" />
                 </Switch>
                 </div>
-
                 <Footer />
 
             </div>
