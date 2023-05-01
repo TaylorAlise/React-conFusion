@@ -42,7 +42,7 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}  id="myModal" className="modal-dialog">
+                <Modal fade={false} isOpen={this.state.isModalOpen} toggle={this.toggleModal}  id="myModal" className="modal-dialog">
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={this.handleLogin}>

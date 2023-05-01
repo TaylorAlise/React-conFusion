@@ -33,7 +33,7 @@ class CommentForm extends Component {
             <div className="container"> 
                 <Button outline onClick={this.toggle}><span className="fa fa-pencil"></span> Submit Comment</Button>
 
-                <Modal isOpen={this.state.modal} toggle={this.toggle} id="formModal">
+                <Modal fade={false} isOpen={this.state.modal} toggle={this.toggle} id="formModal">
                     <ModalHeader toggle={this.toggle}>Submit Form</ModalHeader>
                     <ModalBody>
                             <Form>
@@ -69,9 +69,6 @@ class CommentForm extends Component {
                     </ModalBody>
                 </Modal>
                 
-                <p>I can't see the modal so I have no way of knowing if this is correctly formatted or how it looks for that
-                    matter.
-                </p>
             </div>
 
         )
