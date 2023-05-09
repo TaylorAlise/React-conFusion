@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Button } from "reactstrap";
-import React, { userState } from "react";
+//import React, { userState } from "react";
+import { Control, Errors, actions } from 'react-redux-form';
 import { Modal, ModalBody, ModalHeader, Form, FormGroup, Label, Input } from "reactstrap";
 
 class CommentForm extends Component {   
@@ -23,7 +24,12 @@ class CommentForm extends Component {
     }
 
     
-
+    handleSubmit(values) {
+        console.log('Current State is: ' + JSON.stringify(values));
+        alert('Current State is: ' + JSON.stringify(values));
+        this.props.resetFeedbackForm();
+        // event.preventDefault();
+    }
    
 
     render() {
@@ -36,7 +42,7 @@ class CommentForm extends Component {
                 <Modal fade={false} isOpen={this.state.modal} toggle={this.toggle} id="formModal">
                     <ModalHeader toggle={this.toggle}>Submit Form</ModalHeader>
                     <ModalBody>
-                            <Form>
+                            <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
                                 <FormGroup>
                                     <Label htmlFor="rating">Rating</Label>
                                     <Input type="select" name="backdrop">

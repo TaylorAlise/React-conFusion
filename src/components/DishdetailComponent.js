@@ -1,9 +1,8 @@
-import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
+import { Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import React from "react";
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentFormComponent';
-import { Component } from 'react';
-import { Modal } from 'reactstrap';
+import { Loading } from './LoadingComponent';
 
 //add DishDetail component
 const DishDetail = (props) => 
@@ -21,7 +20,27 @@ const DishDetail = (props) =>
                     
             );
         }
-    }
+        if (props.isLoading) {
+            return(
+                <div className="container">
+                    <div className="row">
+                        <Loading />
+                    </div>
+                </div>
+            );
+        }
+        else if (props.errMess) {
+            return(
+                <div className="container">
+                    <div className="row">
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            );
+        }
+        else if (props.dish != null) {}
+    
+    
 
     function RenderComments({comments, addComment, dishId}) {
         if (comments != null) {
@@ -41,13 +60,14 @@ const DishDetail = (props) =>
                 );
             });
             return <div>{commentList}</div>;
-        
+            
         }
         else {
             return (
                 <div></div>
             )
         }
+
     }
 
 
@@ -90,7 +110,8 @@ const DishDetail = (props) =>
         
     }
     
-};
+    };
+}
 
 
 

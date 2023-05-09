@@ -1,31 +1,43 @@
 import React from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle} from 'reactstrap';
-import { addLeader } from "../redux/ActionCreators";
-import { Leaders } from "../redux/leaders";
+import { Loading } from "./LoadingComponent";
 
-function RenderCard({item}) {
-    return(
-        <Card>
-            <CardImg src={item.image} alt={item.name} />
-            <CardBody>
-            <CardTitle>{item.name}</CardTitle>
-            {item.designation ?
-            <CardSubtitle>{item.designation}</CardSubtitle> : null }
-            <CardText>{item.description}</CardText>
-            </CardBody>
-        </Card>
-    );
+function RenderCard({item, isLoading, errMess}) {
+
+    if (isLoading) {
+        return(
+            <Loading />
+        );
+    }
+    else if (errMess) {
+        return(
+            <h4>{errMess}</h4>
+        );
+    }
+    else
+        return(
+            <Card>
+                <CardImg src={item.image} alt={item.name} />
+                <CardBody>
+                    <CardTitle>{item.name}</CardTitle>
+                    {item.designation ?
+                    <CardSubtitle>{item.designation}</CardSubtitle> : null }
+                    <CardText>{item.description}</CardText>
+                </CardBody>
+            </Card>
+        );
 }
+   
 
-function RenderLeader({addLeader, name}) {
+function RenderLeader({leader}) {
     return(
         <Card>
-            <CardImg src={addLeader.image} alt={addLeader.name} />
+            <CardImg src={leader.image} alt={leader.name} />
             <CardBody>
-            <CardTitle>{addLeader.name}</CardTitle>
-            {addLeader.designation ?
-            <CardSubtitle>{addLeader.designation}</CardSubtitle> : null }
-            <CardText>{addLeader.description}</CardText>
+            <CardTitle>{leader.name}</CardTitle>
+            {leader.designation ?
+            <CardSubtitle>{leader.designation}</CardSubtitle> : null }
+            <CardText>{leader.description}</CardText>
             </CardBody>
         </Card>
 
