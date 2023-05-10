@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentFormComponent';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 //add DishDetail component
 const DishDetail = (props) => 
@@ -11,7 +12,7 @@ const DishDetail = (props) =>
         if (dish != null) {
             return (
                 <Card>
-                    <CardImg top width="100%" src={dish.image} alt={dish.name} />
+                    <CardImg top src={baseUrl + dish.image} alt={dish.name} />
                     <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
@@ -42,8 +43,7 @@ const DishDetail = (props) =>
     
     
 
-    function RenderComments({comments, addComment, dishId}) {
-        if (comments != null) {
+        function RenderComments({comments, postComment, dishId}) {        if (comments != null) {
             const commentList = comments.map((comment) => {
                 return (
                     <div key={comment.id}>
@@ -96,7 +96,7 @@ const DishDetail = (props) =>
                         <RenderComments comments={props.comments} />
                     </div>
                     <div className="col-12 col-md-5 m-1">
-                        <CommentForm />
+                    <CommentForm dishId={props.dishId} postComment={props.postComment} />
                     </div>
                 </div>
             </div>
