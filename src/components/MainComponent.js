@@ -12,7 +12,7 @@ import About from './AboutComponent';
 import Contact from './ContactComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addComment, addLeader, fetchDishes,  fetchComments, fetchPromos, postComment } from '../redux/ActionCreators';
+import { addComment, addLeaders, fetchDishes,  fetchComments, fetchPromos, postComment } from '../redux/ActionCreators';
 import { actions } from 'react-redux-form';
 
 //DISPATCH
@@ -30,8 +30,8 @@ const mapDispatchToProps = dispatch => ({
     fetchPromos: () => dispatch(fetchPromos()),
 
 
-    addLeader: (name, image, designation, description) => 
-    dispatch(addLeader(name, image, designation, description)),
+    addLeaders: (name, image, designation, description) => 
+    dispatch(addLeaders(name, image, designation, description)),
 
     postComment: (dishId, rating, author, comment) =>
     dispatch(postComment(dishId, rating, author, comment))
